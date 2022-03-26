@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.hackathon">
-    // used to get all packages information when creating collectors
-<!--    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />-->
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.MAIN" />
-        </intent>
-    </queries>
-    // used to identify each device and manage user profiles
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" tools:ignore="ProtectedPermissions" />
+    package="com.example.crepe">
 
     <application
         android:allowBackup="true"
@@ -20,24 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Crepe">
         <activity
-            android:name="com.example.hackathon.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Crepe.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service android:name="com.example.hackathon.CrepeAccessibilityService"
-            android:exported="true"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
-            <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
-            </intent-filter>
-            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibilityservice" />
-        </service>
     </application>
 
 </manifest>
